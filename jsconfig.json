@@ -1,0 +1,34 @@
+{
+  "compilerOptions": {
+    "target": "es2016",
+    "allowSyntheticDefaultImports": false,
+    "baseUrl": "./",
+    "paths": {
+      "@services/*": [
+        "src/services/*"
+      ],
+      "@models/*": [
+        "src/models/*"
+      ],
+      "@components/*": [
+        "src/components/*"
+      ],
+      "@utils/*": [
+        "src/utils/*"
+      ],
+      "@vendor/*": [
+        "src/vendor/*"
+      ],
+      "@constants/*": [
+        "src/constants/*"
+      ],
+      "@/*": [
+        "src/*"
+      ]
+    }
+  },
+  "exclude": [
+    "node_modules",
+    "dist"
+  ]
+}
