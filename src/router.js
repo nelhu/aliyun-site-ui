@@ -14,7 +14,7 @@ function RouterConfig({history}) {
         <Route
           path="/"
           component={dynamic({
-            component: () => import(/* index */ '@/routes/IndexPage')
+            component: () => import('@/routes/UploadPage')
           })}
           exact
         />

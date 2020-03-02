@@ -34,7 +34,8 @@ class UploadPage extends React.Component {
     this.upload(fileList);
   };
   upload = fileList => {
-    const request = superagent.post('/api/upload').field('time', Date.now());
+    const path = process.env.NODE_ENV === 'production' ? 'http://118.190.208.149:9000/upload' : '/api/upload';
+    const request = superagent.post(path).field('time', Date.now());
     fileList.forEach(file => {
       request.attach(file.name, file);
     });
