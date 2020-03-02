@@ -20,43 +20,6 @@
     "singleQuote": true,
     "printWidth": 120
   },
-  "eslintConfig": {
-    "parser": "babel-eslint",
-    "extends": [
-      "plugin:prettier/recommended"
-    ],
-    "plugins": [
-      "prettier"
-    ],
-    "parserOptions": {
-      "ecmaVersion": 6,
-      "sourceType": "module",
-      "ecmaFeatures": {
-        "jsx": true,
-        "experimentalObjectRestSpread": true
-      }
-    },
-    "settings": {
-      "react": {
-        "version": "detect"
-      }
-    },
-    "globals": {
-      "__IS_SERVER__": true,
-      "__IS_CLIENT__": true,
-      "WeixinJSBridge": true,
-      "Promise": true,
-      "System": true,
-      "wx": true
-    },
-    "env": {
-      "browser": true,
-      "node": true,
-      "es6": true,
-      "jest": true
-    },
-    "rules": {}
-  },
   "husky": {
     "hooks": {
       "pre-commit": "lint-staged"
@@ -87,7 +50,7 @@
     "@babel/core": "7.1.0",
     "@svgr/webpack": "2.4.1",
     "babel-core": "7.0.0-bridge.0",
-    "babel-eslint": "^10.0.3",
+    "babel-eslint": "^10.1.0",
     "babel-jest": "23.6.0",
     "babel-loader": "8.0.4",
     "babel-plugin-dva-hmr": "^0.3.2",

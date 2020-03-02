@@ -1,5 +1,6 @@
+/* eslint-disable no-unused-vars */
 import React from 'react';
-import {Route, Switch, routerRedux} from 'dva/router';
+import {routerRedux} from 'dva/router';
 import dynamic from 'dva/dynamic';
 
 import PageNotFound from '@/routes/NotFoundPage';
@@ -14,6 +15,13 @@ function RouterConfig({history}) {
           path="/"
           component={dynamic({
             component: () => import(/* index */ '@/routes/IndexPage')
+          })}
+          exact
+        />
+        <Route
+          path="/upload"
+          component={dynamic({
+            component: () => import('@/routes/UploadPage')
           })}
           exact
         />
