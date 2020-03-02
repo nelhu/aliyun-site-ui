@@ -1,8 +1,9 @@
 /* eslint-disable no-unused-vars */
 import React from 'react';
 import {connect} from 'react-redux';
-import API from '@/services';
-import {Input, Icon, message, List} from 'antd';
+// import API from '@/services';
+import superagent from 'superagent';
+import {Input, Icon, message, List, Progress} from 'antd';
 import {copy} from '@utils';
 import('./style.postcss');
 
@@ -13,7 +14,8 @@ class UploadPage extends React.Component {
   }
   state = {
     fileNames: '',
-    urls: []
+    urls: [],
+    percent: 0
   };
   trigger = () => {
     if (this.chooser) {
@@ -32,22 +34,24 @@ class UploadPage extends React.Component {
     this.upload(fileList);
   };
   upload = fileList => {
-    const formData = new FormData();
-    formData.append('timestamp', Date.now());
+    const request = superagent.post('/api/upload').field('time', Date.now());
     fileList.forEach(file => {
-      formData.append(file.name, file);
+      request.attach(file.name, file);
     });
-    API.upload(formData).then(res => {
-      console.log(res);
-      this.setState({
-        fileNames: '',
-        urls: res.urls
+    request
+      .on('progress', e => {
+        this.setState({percent: event.percent});
+      })
+      .then(res => {
+        const urls = res.body.data.urls;
+        console.log(urls);
+        this.setState({
+          fileNames: '',
+          urls,
+          percent: 0
+        });
+        message.success('上传成功', 1.5);
       });
-      message.success('上传成功', 1.5);
-    });
-    // .on('progress', e => {
-    //   console.log(event.percent);
-    // });
   };
   render() {
     return (
@@ -70,6 +74,17 @@ class UploadPage extends React.Component {
               bordered
               dataSource={this.state.urls}
               renderItem={item => <List.Item onClick={() => copy(item)}>{item}</List.Item>}
+            />
+          )}
+          {this.state.percent > 0 && (
+            <Progress
+              percent={this.state.percent}
+              strokeColor={{
+                from: '#108ee9',
+                to: '#87d068'
+              }}
+              percent={99.9}
+              status="active"
             />
           )}
         </div>
