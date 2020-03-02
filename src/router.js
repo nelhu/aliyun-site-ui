@@ -1,6 +1,6 @@
 /* eslint-disable no-unused-vars */
 import React from 'react';
-import {routerRedux} from 'dva/router';
+import {Switch, Route, routerRedux} from 'dva/router';
 import dynamic from 'dva/dynamic';
 
 import PageNotFound from '@/routes/NotFoundPage';

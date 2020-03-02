@@ -1,7 +1,6 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import API from '@/services';
-import Loading from '../../components/Loading';
 
 import('./style.postcss');
 
