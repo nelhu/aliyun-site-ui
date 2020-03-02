@@ -14,11 +14,7 @@ export const serializeQuery = param => {
   Object.keys(param).forEach(k => {
     const v = param[k];
     if (v !== '') {
-      p.push(
-        v instanceof Array
-          ? serializeArray(k, v)
-          : `${k}=${encodeURIComponent(v)}`
-      );
+      p.push(v instanceof Array ? serializeArray(k, v) : `${k}=${encodeURIComponent(v)}`);
     }
   });
   return p.join('&');
@@ -30,7 +26,7 @@ const curryMethod = type => {
       url: url,
       method: type,
       options: options,
-      loading: loading || false,
+      loading: loading || false
     };
   };
 };

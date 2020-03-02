@@ -1,30 +1,27 @@
 import React from 'react';
-import { connect } from 'react-redux';
+import {connect} from 'react-redux';
 import API from '@/services';
 import Loading from '../../components/Loading';
 
 import('./style.postcss');
 
 class NotFoundPage extends React.Component {
-    state = {}
+  state = {};
 
-    onSubmit = () => {
-        API.getUser({
-            pwd: 'xxx',
-            name: 'xxx'
-        });
-    }
+  onSubmit = () => {
+    API.getUser({
+      pwd: 'xxx',
+      name: 'xxx'
+    });
+  };
 
-    render () {
-        return (
-            <div className="page page-404">
-                <Loading message="页面未找到" />
-            </div>
-        );
-    }
+  render() {
+    return (
+      <div className="page page-404">
+        <Loading message="页面未找到" />
+      </div>
+    );
+  }
 }
 
-export default connect(
-    (state) => state,
-    { }
-)(NotFoundPage);
+export default connect(state => state, {})(NotFoundPage);

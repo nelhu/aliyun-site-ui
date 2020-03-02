@@ -1,1 +1,1 @@
-export { global } from './global';
+export {global} from './global';

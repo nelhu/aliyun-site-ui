@@ -13,7 +13,6 @@ if (!NODE_ENV) {
   throw new Error('The NODE_ENV environment variable is required but was not specified.');
 }
 
-let SENTRY_AUTH_TOKEN = ''; // the sentry auth token for release the source map
 let webAppVersion = 'unknown'; // the current version of webapp
 const now = Date.now();
 const buildId = process.env.CI_JOB_ID || now;
@@ -94,12 +93,6 @@ function getClientEnvironment(publicUrl) {
         // This should only be used as an escape hatch. Normally you would put
         // images into the `src` and `import` them in code to get their paths.
         PUBLIC_URL: publicUrl,
-        // Sentry env config
-        SENTRY_AUTH_TOKEN: SENTRY_AUTH_TOKEN,
-        SENTRY_DSN: process.env.SENTRY_DSN,
-        SENTRY_ORG: process.env.SENTRY_ORG,
-        SENTRY_PROJECT: process.env.SENTRY_PROJECT,
-        SENTRY_URL: process.env.SENTRY_URL,
         // Web app semver.
         WEB_APP_VERSION: webAppVersion,
         WEB_APP_LAST_MODIFIED: now

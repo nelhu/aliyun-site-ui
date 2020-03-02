@@ -12,19 +12,17 @@ function pathRgxToUrl(path, data) {
 }
 
 for (const key in apis) {
-  if (
-    ({}).hasOwnProperty.call(apis, key)
-  ) {
+  if ({}.hasOwnProperty.call(apis, key)) {
     apiCollection[key] = data => {
       const api = apis[key];
-  
+
       const params = {
         url: pathRgxToUrl(api.url, data),
         method: api.method,
         options: api.options,
-        data,
+        data
       };
-      
+
       return xFetch(params);
     };
   }

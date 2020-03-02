@@ -27,11 +27,7 @@ function handleError(res) {
     try {
       data = JSON.parse(res.body);
     } catch (ex) {
-      return new Error(
-        res.statusCode === 500
-          ? '服务器异常，请稍后再试'
-          : '网络异常，请稍后再试'
-      );
+      return new Error(res.statusCode === 500 ? '服务器异常，请稍后再试' : '网络异常，请稍后再试');
     }
   }
 
@@ -45,12 +41,12 @@ function handleError(res) {
 function api(fn) {
   return function(params) {
     let req = fn(params);
-    
+
     let token = localStorage.getItem('token');
 
     if (token && token !== 'undefined') {
       req.set('user-token', token).query({
-        _v: Date.now(),
+        _v: Date.now()
       });
     }
 
@@ -66,7 +62,8 @@ function api(fn) {
   };
 }
 
-export function request(method, url, data, options) { // eslint-disable-line max-params
+export function request(method, url, data, options) {
+  // eslint-disable-line max-params
   let req = xFetch(method, resolveUrl(url));
 
   if (options && typeof options === 'object') {
@@ -90,8 +87,8 @@ export function request(method, url, data, options) { // eslint-disable-line max
   }
 
   return req;
-};
+}
 
-export default api(({ method, url, data, options }) => {
+export default api(({method, url, data, options}) => {
   return request(method, url, data, options);
 });

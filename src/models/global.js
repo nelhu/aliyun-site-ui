@@ -1,4 +1,3 @@
-
 export const global = {
   namespace: 'global',
 

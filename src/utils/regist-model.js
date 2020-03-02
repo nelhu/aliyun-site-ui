@@ -1,6 +1,6 @@
 /**
  * 注册 model
- * 
+ *
  * @param {Object} app 实例
  * @param {Object} model model
  * @param {Object} cached 缓存对象

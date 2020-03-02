@@ -6,7 +6,9 @@
     "start": "node scripts/start.js",
     "build": "node scripts/build.js",
     "deploy": "node scripts/deploy.js",
-    "test": "node scripts/test.js"
+    "test": "node scripts/test.js",
+    "lint": "eslint 'src/**/*.js' 'src/**/*.jsx'",
+    "lint:fix": "eslint --fix 'src/**/*.js' 'src/**/*.jsx'"
   },
   "babel": {
     "presets": [
@@ -70,6 +72,7 @@
     "not op_mini all"
   ],
   "dependencies": {
+    "antd": "3.19.1",
     "dva": "^2.4.1",
     "dva-loading": "^3.0.20",
     "history": "^4.10.1",
@@ -82,7 +85,6 @@
   },
   "devDependencies": {
     "@babel/core": "7.1.0",
-    "@sentry/webpack-plugin": "^1.6.2",
     "@svgr/webpack": "2.4.1",
     "babel-core": "7.0.0-bridge.0",
     "babel-eslint": "^10.0.3",
@@ -100,6 +102,7 @@
     "dotenv": "6.0.0",
     "dotenv-expand": "4.2.0",
     "eslint": "^6.8.0",
+    "eslint-config-prettier": "^6.10.0",
     "eslint-loader": "^3.0.3",
     "eslint-plugin-flowtype": "2.50.1",
     "eslint-plugin-import": "^2.19.1",

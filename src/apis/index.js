@@ -1,5 +1,5 @@
-import { GET } from '@/services/utils';
+import {GET} from '@/services/utils';
 
 export default {
-  getTime: GET('/time'),
+  getTime: GET('/time')
 };
