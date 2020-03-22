@@ -1,0 +1,118 @@
+.footer {
+    background: #3c3c3c;
+    overflow: hidden;
+    zoom:1;
+    color: #fff;
+    .container {
+        width: 24rem;
+        margin: 0 auto;
+    }
+    .footer-content {
+        padding: 1.11rem 0 1.07rem;
+        display: flex;
+        justify-content: space-between;
+        .footer-list{
+            flex: 1;
+            .footer-nav {
+                padding-bottom: .27rem;
+                a {
+                    font-size: 16px;
+                    color: #fff;
+                }
+                &:last-child {
+                    padding-bottom: 0;
+                }
+            }
+        }
+        .footer-service {
+            font-size: 16px;
+            flex: 1;
+            p {
+                padding-bottom: .27rem;
+                &:nth-child(3) {
+                    width: 231px;
+                    height: 38px;
+                    background: #2F2F2F;
+                    font-size: 16px;
+                    line-height: 38px;
+                    border-radius: 20px;
+                    padding-bottom: 0;
+                    padding-left: 17px;
+                    margin-bottom: 8px;
+                }
+                &:last-child {
+                    width: 231px;
+                    height: 38px;
+                    background: #2F2F2F;
+                    font-size: 16px;
+                    line-height: 38px;
+                    border-radius: 20px;
+                    padding-bottom: 0;
+                    padding-left: 17px;
+                    margin-bottom: 8px;
+                }
+            }
+        }
+        .footer-weixin {
+            flex: 1;
+            text-align: center;
+            p {
+                padding-bottom: 16px;
+                text-align: left;
+                padding-left: 2.71rem;
+            }
+            img {
+                width: 2.56rem;
+
+            }
+        }
+    }
+    .right {
+      font-size: 0.27rem;
+      text-align: center;
+      color: #CDCDCD;
+      background-color: #2F2F2F;
+      line-height: 26px;
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+        a.beian{
+            color: #fff;
+            margin:0 .53rem;
+            white-space: nowrap;
+        }
+        .police-record {
+            margin-right: .8rem;
+            position: relative;
+            white-space: nowrap;
+            .icon-police-record {
+                width: 1.5em;
+                height: 1.5em;
+                display: inline-block;
+                background-size: contain;
+                position: absolute;
+                top: -4px;
+                right: -0.53rem;
+            }
+            span {
+                color: #fff;
+            }
+        }
+    }
+}
+@media only screen
+and (min-device-width : 768px)
+and (max-device-width : 1024px)
+and (orientation : portrait){
+        .footer .col a{
+            margin: 0 10px;font-size: 12px;
+        }
+        .footer .col-flex span,
+        .footer .right{
+            font-size: 12px;
+        }
+        .footer .row{
+            margin: 30px 0;
+        }
+}
