@@ -93,7 +93,7 @@
     "postcss-preset-env": "6.0.6",
     "postcss-safe-parser": "4.0.1",
     "prettier": "^1.19.1",
-    "react-dev-utils": "^6.0.5",
+    "react-dev-utils": "^11.0.4",
     "react-tap-event-plugin": "^3.0.3",
     "resolve": "1.8.1",
     "saladcss-bem": "^0.0.2",
